@@ -1,0 +1,42 @@
+.Playlist{
+    background-color: #3B1C3285;
+    padding: 30px;
+    margin: 20px;
+    width: 40%;
+    border-radius: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 21px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: #fff 1px solid ;
+    outline: none;
+    
+    background-color: #00000000;
+  }
+  
+  .submitButton {
+    margin: 30px;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #fcfcfc;
+    color: black;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #A64D79;
+    color: white;
+  }

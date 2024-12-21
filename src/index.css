@@ -7,13 +7,16 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
-a {
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/*a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -66,3 +69,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
