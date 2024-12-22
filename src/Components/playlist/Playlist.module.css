@@ -13,7 +13,7 @@
     width: 100%;
   }
   
-  .input {
+.input {
     padding: 10px;
     font-size: 21px;
     margin-bottom: 10px;
@@ -24,19 +24,19 @@
     background-color: #00000000;
   }
   
-  .submitButton {
-    margin: 30px;
-    padding: 12px 20px;
-    font-size: 16px;
-    background-color: #fcfcfc;
-    color: black;
-    border: none;
-    border-radius: 60px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.submitButton {
+  margin: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #fcfcfc;
+  color: black;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
   
-  .submitButton:hover {
-    background-color: #A64D79;
-    color: white;
-  }
+.submitButton:hover {
+  background-color: #A64D79;
+  color: white;
+}

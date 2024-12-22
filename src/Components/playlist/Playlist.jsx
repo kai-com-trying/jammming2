@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Track from '../searchresults/Track'
 import styles from './Playlist.module.css'
 
-const Playlist = () => {
+const Playlist = ({playlistTracks, onRemove}) => {
     const [playlistName, setPlaylistName] = useState('');
 
     const handleSubmit = (e) => {
@@ -23,11 +23,18 @@ const Playlist = () => {
             />
 
         
-            <Track 
-            name="Versace on the Floor" 
-            artist="Bruno Mars" 
-            album="24K Magic" 
-            />
+          {playlistTracks.length > 0 ? (
+            playlistTracks.map((track) => (
+              <Track 
+                key={track.id} 
+                track={track} 
+                isRemoval={true} 
+                onRemove={onRemove}
+              />
+            ))
+          ) : (
+            <p>No tracks in playlist</p>
+          )}
     
             <button 
             type="submit" 
