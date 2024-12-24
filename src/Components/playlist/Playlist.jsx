@@ -2,10 +2,11 @@ import React, {useState} from 'react'
 import Track from '../searchresults/Track'
 import styles from './Playlist.module.css'
 
-const Playlist = ({playlistTracks, onRemove}) => {
+const Playlist = ({playlistTracks, onRemove, onReset}) => {
     const [playlistName, setPlaylistName] = useState('');
 
     const handleSubmit = (e) => {
+      onReset();
       e.preventDefault();
       alert(`Playlist "${playlistName}" created!`);
       setPlaylistName('');  // Reset after submit

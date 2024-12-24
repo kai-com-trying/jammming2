@@ -30,6 +30,9 @@ function App() {
       return prev.filter((t) => t.id !== track.id);  // Remove track by filtering
     });
   };
+  const emptyPlaylist = () => {
+    setPlaylistTracks([])
+  }
   
 
   const [searchQuery, setSearchQuery] = useState("");  // Search bar input
@@ -47,6 +50,7 @@ function App() {
         <Playlist 
           playlistTracks={playlistTracks} 
           onRemove={handleRemoveFromPlaylist} 
+          onReset={emptyPlaylist}
         />
       </div>
     </>
