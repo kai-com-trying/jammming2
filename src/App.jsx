@@ -4,18 +4,27 @@ import Title from './Components/Title'
 import SearchBar from './Components/searchbar/SearchBar'
 import SearchResults from './Components/searchresults/SearchResults'
 import Playlist from './Components/playlist/Playlist'
+import SpotifyAuth from './Components/SpotifyAuth'
+import SpotifyAPI from './Components/SpotifyAPI'
+
+const token = SpotifyAuth.getAccessToken();
+console.log('Spotify Access Token:', token);
+
 
 function App() {
   const mockArray = [
-    { id: 1, name: "Uptown Funk", artist: "Bruno Mars", album: "Uptown Special" },
-    { id: 2, name: "Locked Out of Heaven", artist: "Bruno Mars", album: "Unorthodox Jukebox" },
-    { id: 3, name: "Versace on the Floor", artist: "Bruno Mars", album: "24K Magic" },
-    { id: 4, name: "That's What I Like", artist: "Bruno Mars", album: "24K Magic" }
+    { id: 1, name: "Uptown Funk", artist: "Bruno Mars", album: "Uptown Special", uri:"utf" },
+    { id: 2, name: "Locked Out of Heaven", artist: "Bruno Mars", album: "Unorthodox Jukebox", uri:"loofh" },
+    { id: 3, name: "Versace on the Floor", artist: "Bruno Mars", album: "24K Magic", uri:"vscotf"},
+    { id: 4, name: "That's What I Like", artist: "Bruno Mars", album: "24K Magic", uri:"twil" }
   ];
 
   const [searchResults, setSearchResults] = useState([]);  // Tracks from search
-  const handleSearch = (query) => {
-    setSearchResults(mockArray)
+  const handleSearch = async (query) => {
+    if (!query) return;
+
+    const results = await SpotifyAPI.searchTracks(query, token);
+    setSearchResults(results);  // Store API results in state
   }
 
   const [playlistTracks, setPlaylistTracks] = useState([]);  // Tracks in playlist
